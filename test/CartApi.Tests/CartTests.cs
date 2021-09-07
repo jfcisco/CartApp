@@ -24,7 +24,7 @@ namespace CartApi.Tests
             Assert.Equal(25.98M, bill.Subtotal);
             Assert.Equal(3.6372M, bill.Taxes);
             Assert.Equal(0, bill.Discounts.Count);
-            Assert.Equal(22.3428M, bill.Total);
+            Assert.Equal(29.6172M, bill.Total);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace CartApi.Tests
             // Check that 10% off shoes offer is included
             Assert.Contains(bill.Discounts, offer => offer.Key == "10% off shoes" && offer.Value == 0.1M * 24.99M);
 
-            decimal expectedTotal = 24.99M - (24.99M * 0.14M) - (0.1M * 24.99M);
+            decimal expectedTotal = 24.99M + (24.99M * 0.14M) - (0.1M * 24.99M);
             Assert.Equal(expectedTotal, bill.Total);
         }
 

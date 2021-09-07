@@ -29,7 +29,7 @@ namespace CartApi.Data
 			discounts = offers.Values.Sum();
 
 			// Get total
-			decimal total = subtotal - taxes - discounts;
+			decimal total = subtotal + taxes - discounts;
 
 			// Provide bill
 			return new Bill("$", subtotal, taxes, offers, total);
