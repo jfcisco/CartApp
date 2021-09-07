@@ -7,13 +7,13 @@ namespace CartApi.Data
 	public class Cart
 	{
 		private const decimal TAX_RATE = 0.14M;
-		public ICollection<Product> Products { get; set; } = new List<Product>();
+		public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 
 		/// <summary>
 		/// Calculates the bill of the products in the cart
 		/// </summary>
 		/// <returns>The bill</returns>
-        public Bill CalculateBill()
+        public virtual Bill CalculateBill()
 		{
 			decimal subtotal = decimal.Zero;
 			// Get subtotal by summing up the products' prices
@@ -38,7 +38,7 @@ namespace CartApi.Data
 		/// <summary>
 		/// Clears the products in the cart.
 		/// </summary>
-		public void Clear()
+		public virtual void Clear()
         {
 			Products.Clear();
         }
