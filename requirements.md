@@ -69,7 +69,7 @@ Total: 467 e£
 1. Use pre-defined [Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern) whenever needed in your code. 
 1. Input should be via either (whatever suits you)
 	1. The command line in the form `createCart --bill-currency=EGP T-shirt T-shirt shoes`.
-	1. Or a simple REST API.
+	1. Or a simple REST API. --> Serialization to be done via JSON
 1. Write unit tests to cover your core code fully.
 1. No pseudo-code allowed. 
   

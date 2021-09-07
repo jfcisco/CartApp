@@ -5,11 +5,16 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E6E971BD-EE37-4AEE-A616-7654395B9DF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartApi", "src\CartApi\CartApi.csproj", "{69F95371-C6A8-478B-A6AC-F4C8A83628AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi", "src\CartApi\CartApi.csproj", "{69F95371-C6A8-478B-A6AC-F4C8A83628AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D44AAB4B-A74B-4767-B1F3-CABF61C79000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartApi.Tests", "test\CartApi.Tests\CartApi.Tests.csproj", "{70B73922-058F-4FC6-85DA-58972323C8D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartApi.Tests", "test\CartApi.Tests\CartApi.Tests.csproj", "{70B73922-058F-4FC6-85DA-58972323C8D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0AB01122-4FCC-49EA-BDE1-C9AE30F800AC}"
+	ProjectSection(SolutionItems) = preProject
+		requirements.md = requirements.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +24,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{69F95371-C6A8-478B-A6AC-F4C8A83628AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -49,8 +51,14 @@ Global
 		{70B73922-058F-4FC6-85DA-58972323C8D0}.Release|x86.ActiveCfg = Release|Any CPU
 		{70B73922-058F-4FC6-85DA-58972323C8D0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{69F95371-C6A8-478B-A6AC-F4C8A83628AE} = {E6E971BD-EE37-4AEE-A616-7654395B9DF0}
 		{70B73922-058F-4FC6-85DA-58972323C8D0} = {D44AAB4B-A74B-4767-B1F3-CABF61C79000}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85C5428F-96AC-4EB6-8A88-845D95A60811}
 	EndGlobalSection
 EndGlobal
