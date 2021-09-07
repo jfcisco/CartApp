@@ -7,9 +7,9 @@ namespace CartApi.Services
     {
         private readonly Cart Cart;
 
-        public CartService()
+        public CartService(Cart cart)
         {
-            Cart = new Cart();
+            Cart = cart;
         }
 
         public void AddToCart(Product product)
