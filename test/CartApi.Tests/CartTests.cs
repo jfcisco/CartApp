@@ -1,4 +1,5 @@
 ﻿using CartApi.Data;
+using System.Collections.Generic;
 using Xunit;
 
 namespace CartApi.Tests
@@ -53,6 +54,40 @@ namespace CartApi.Tests
 
             decimal expectedTotal = 24.99M - (24.99M * 0.14M) - (0.1M * 24.99M);
             Assert.Equal(expectedTotal, bill.Total);
+        }
+
+
+        [Theory]
+        [InlineData(2, 1, 9.995)]
+        [InlineData(2, 2, 9.995)]
+        [InlineData(4, 3, 19.99)]
+        public void CalculateBill_Success_AppliesHalfOffJacketDiscount(int tshirtCount, int jacketCount, decimal expectedDiscountAmount)
+        {
+            var products = GenerateTshirtsAndJackets(tshirtCount, jacketCount);
+
+            cart.Products = products;
+            Bill bill = cart.CalculateBill();
+
+            Assert.NotNull(bill);
+            string expectedOfferName = "50% off jackets";
+            Assert.Contains(bill.Discounts, offer => offer.Key == expectedOfferName && offer.Value == expectedDiscountAmount);
+        }
+
+        // Generates a list with user-specified counts of T-shirt and Jacket products
+        private List<Product> GenerateTshirtsAndJackets(int tshirtCount, int jacketCount)
+        {
+            List<Product> productsList = new();
+            for(int i = 0; i < tshirtCount; i++)
+            {
+                productsList.Add(new Product { Name = "T-shirt", Price = 10.99M });
+            }
+
+            for(int j = 0; j < jacketCount; j++)
+            {
+                productsList.Add(new Product { Name = "Jacket", Price = 19.99M });
+            }
+
+            return productsList;
         }
     }
 }
