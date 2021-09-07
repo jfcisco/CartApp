@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CartApi.Data;
 using CartApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,9 +34,10 @@ namespace CartApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CartApi", Version = "v1" });
             });
-            
-            services.AddSingleton<ProductService>(); // Set as singleton because any less and we will have a captured dependency
-            services.AddSingleton<CartService>();
+
+            services.AddSingleton<Cart>();
+            services.AddTransient<ProductService>();
+            services.AddTransient<CartService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
