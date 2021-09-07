@@ -19,7 +19,7 @@ namespace CartApi.Controllers
         }
 
         [HttpPost("products")]
-        public ActionResult AddToCart(string productName)
+        public ActionResult AddToCart([FromQuery] string productName)
         {
             Product productToAdd;
             try
