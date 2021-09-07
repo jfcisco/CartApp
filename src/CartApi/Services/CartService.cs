@@ -14,7 +14,7 @@ namespace CartApi.Services
 
         public void AddToCart(Product product)
         {
-            if (product != null)
+            if (product == null)
             {
                 throw new ArgumentNullException(nameof(product));
             }
