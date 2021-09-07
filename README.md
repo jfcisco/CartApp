@@ -4,6 +4,14 @@ The application is a REST API that allows you to add, update, and remove a cart 
 
 At any point, the application can generate a detailed bill of the active cart.
 
+## How to Run the Program
+Pre-requisites: [.NET 5.0 SDK](https://dotnet.microsoft.com/download) is installed on your computer.
+
+1. Clone this repository to your computer.
+1. Ensure current working directory contains solution (.sln) file. If not, `cd` into the CartApp directory.
+1. Run the command `dotnet run --project ./src/CartApi/CartApi.csproj`.
+1. Test by navigating to the /swagger path of the any one of the URLs displayed in the terminal.
+
 ## Current Status
 
 The application starts a Kestrel server hosting a REST API.
