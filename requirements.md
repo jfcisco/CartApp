@@ -62,7 +62,7 @@ Total: 467 e£
 ```
   
 ## Requirements
-1. PHP
+1. PHP --> C# used instead
 1. Stick to OO fundamentals in all aspects of your code. 
 1. Stick to SOLID principles.
 	1. Code should allow future extensibility by *strictly* follow the Open-closed Principle.
