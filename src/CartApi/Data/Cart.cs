@@ -9,6 +9,10 @@ namespace CartApi.Data
 		private const decimal TAX_RATE = 0.14M;
 		public ICollection<Product> Products { get; set; } = new List<Product>();
 
+		/// <summary>
+		/// Calculates the bill of the products in the cart
+		/// </summary>
+		/// <returns>The bill</returns>
         public Bill CalculateBill()
 		{
 			decimal subtotal = decimal.Zero;
@@ -31,6 +35,14 @@ namespace CartApi.Data
 			return new Bill("$", subtotal, taxes, offers, total);
         }
 
+		/// <summary>
+		/// Clears the products in the cart.
+		/// </summary>
+		public void Clear()
+        {
+			Products.Clear();
+        }
+
 		private IDictionary<string, decimal> GetOffers(IEnumerable<Product> products)
         {
 			Dictionary<string, decimal> offers = new();
@@ -48,7 +60,7 @@ namespace CartApi.Data
 			/* Offer 2: Buy two t-shirts and get a jacket half its price.*/
 
 			var jackets = products.Where(p => p.Name == "Jacket");
-			if (jackets.Count() > 0)
+			if (jackets.Any())
             {
 				int numOfTshirtPairs = products.Where(p => p.Name == "T-shirt").Count() / 2;
 				var numOfJackets = products.Where(p => p.Name == "Jacket").Count();
